@@ -1,0 +1,347 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: system-ui, sans-serif;
+  background: #f5f4f0;
+  color: #1a1a18;
+  min-height: 100vh;
+}
+h2 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 1.25rem;
+}
+h3 {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 0 0.75rem;
+  color: #444441;
+}
+
+/* ── Controls ── */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+.controls label {
+  font-size: 13px;
+  color: #5f5e5a;
+}
+
+select,
+input[type="range"] {
+  accent-color: #7f77dd;
+  font-size: 13px;
+}
+select {
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 0.5px solid #b4b2a9;
+  background: #fff;
+  cursor: pointer;
+}
+input[type="text"] {
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 0.5px solid #b4b2a9;
+  background: #fff;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+input[type="text"]:focus {
+  border-color: #7f77dd;
+}
+
+button {
+  padding: 6px 18px;
+  border-radius: 8px;
+  border: 0.5px solid #b4b2a9;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a18;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+button:hover {
+  background: #f1efe8;
+}
+button.secondary {
+  color: #5f5e5a;
+  background: transparent;
+  border-color: #d3d1c7;
+}
+button.primary {
+  background: #534ab7;
+  color: #fff;
+  border-color: #534ab7;
+}
+button.primary:hover {
+  background: #3c3489;
+  border-color: #3c3489;
+}
+
+/* ── Bulk input ── */
+.bulk-input {
+  margin-bottom: 1rem;
+}
+.bulk-input summary {
+  font-size: 13px;
+  color: #5f5e5a;
+  cursor: pointer;
+  user-select: none;
+  width: fit-content;
+}
+.bulk-input summary:hover {
+  color: #1a1a18;
+}
+.bulk-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+.bulk-row input[type="text"] {
+  width: 280px;
+}
+
+/* ── Config panel ── */
+.flip-btn {
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 0.5px solid #b4b2a9;
+  background: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  line-height: 1;
+  user-select: none;
+}
+.flip-btn:hover {
+  background: #f1efe8;
+}
+.flip-btn.active {
+  background: #eeedfe;
+  border-color: #7f77dd;
+}
+
+.config-panel {
+  background: #fff;
+  border-radius: 12px;
+  border: 0.5px solid #d3d1c7;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.config-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.config-row:last-child {
+  margin-bottom: 0;
+}
+.horse-num {
+  font-size: 12px;
+  color: #888780;
+  width: 20px;
+  text-align: right;
+  flex-shrink: 0;
+}
+.icon-select {
+  font-size: 18px;
+  padding: 3px 6px;
+  border-radius: 8px;
+  border: 0.5px solid #b4b2a9;
+  background: #fff;
+  cursor: pointer;
+  width: 64px;
+}
+.name-input {
+  width: 140px;
+}
+.remove-horse {
+  padding: 2px 7px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  color: #b4b2a9;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s, color 0.15s;
+}
+.config-row:hover .remove-horse {
+  opacity: 1;
+}
+.remove-horse:hover {
+  color: #c0392b;
+}
+.flip-hint {
+  font-size: 11px;
+  color: #b4b2a9;
+}
+
+/* ── Track ── */
+.track-container {
+  background: #e8e6e0;
+  border-radius: 12px;
+  border: 0.5px solid #d3d1c7;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.track {
+  position: relative;
+  height: 48px;
+  background: #fff;
+  border-radius: 6px;
+  border: 0.5px solid #d3d1c7;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.track:last-child {
+  margin-bottom: 0;
+}
+.finish-line {
+  position: absolute;
+  right: 40px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #d85a30 0px,
+    #d85a30 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  opacity: 0.7;
+}
+.lane-label {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #888780;
+  font-weight: 500;
+  z-index: 2;
+  pointer-events: none;
+  max-width: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Horse ── */
+.horse {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  user-select: none;
+  z-index: 3;
+  transition: left 0.18s ease-out;
+}
+.horse-inner {
+  display: inline-block;
+}
+.horse-inner.flipped {
+  transform: scaleX(-1);
+}
+.horse.configurable {
+  cursor: pointer;
+}
+.horse.configurable:hover .horse-inner {
+  filter: drop-shadow(0 0 4px #7f77dd);
+}
+
+@keyframes gallop {
+  0%   { transform: translateY(0px)  rotate(-4deg); }
+  25%  { transform: translateY(-4px) rotate(0deg);  }
+  50%  { transform: translateY(0px)  rotate(4deg);  }
+  75%  { transform: translateY(3px)  rotate(0deg);  }
+  100% { transform: translateY(0px)  rotate(-4deg); }
+}
+@keyframes gallop-flipped {
+  0%   { transform: scaleX(-1) translateY(0px)  rotate(-4deg); }
+  25%  { transform: scaleX(-1) translateY(-4px) rotate(0deg);  }
+  50%  { transform: scaleX(-1) translateY(0px)  rotate(4deg);  }
+  75%  { transform: scaleX(-1) translateY(3px)  rotate(0deg);  }
+  100% { transform: scaleX(-1) translateY(0px)  rotate(-4deg); }
+}
+.horse.running .horse-inner {
+  animation: gallop 0.35s ease-in-out infinite;
+}
+.horse.running .horse-inner.flipped {
+  animation: gallop-flipped 0.35s ease-in-out infinite;
+}
+
+/* ── Winner badge ── */
+.winner-badge {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  font-weight: 500;
+  background: #faeeda;
+  color: #854f0b;
+  padding: 2px 8px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+/* ── Status & podium ── */
+.status-bar {
+  min-height: 28px;
+  margin-top: 4px;
+}
+.status-msg {
+  font-size: 13px;
+  color: #5f5e5a;
+}
+.podium {
+  margin-top: 1rem;
+  background: #e8e6e0;
+  border-radius: 12px;
+  border: 0.5px solid #d3d1c7;
+  padding: 0.85rem 1rem;
+  display: none;
+}
+.podium h3 {
+  font-size: 13px;
+  font-weight: 500;
+  color: #5f5e5a;
+  margin: 0 0 8px;
+}
+.podium-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.podium-item {
+  font-size: 13px;
+  color: #1a1a18;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.medal {
+  font-size: 15px;
+}
+#speed-label {
+  font-size: 13px;
+  color: #5f5e5a;
+  min-width: 72px;
+}
