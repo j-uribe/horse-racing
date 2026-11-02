@@ -13,3 +13,13 @@ const DEFAULT_NAMES = [
 const MEDALS = ["🥇", "🥈", "🥉"];
 
 const SPEED_LABELS = ["", "Muy lenta", "Lenta", "Normal", "Rápida", "Muy rápida"];
+
+const MAX_STEP = 4;
+
+const HEART_ATTACK = {
+  chance: 0.33,
+  sprintStepMin: MAX_STEP,
+  sprintStepMax: 5.5,
+  collapseMin: 0.82,
+  collapseMax: 0.92,
+};
