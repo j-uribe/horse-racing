@@ -113,6 +113,26 @@ button.primary:hover {
 .bulk-row input[type="text"] {
   width: 280px;
 }
+.event-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #5f5e5a;
+  cursor: pointer;
+  user-select: none;
+}
+.event-toggle input {
+  accent-color: #7f77dd;
+}
+.event-label {
+  font-size: 13px;
+  color: #5f5e5a;
+  min-width: 36px;
+}
+input[type="range"]:disabled + .event-label {
+  opacity: 0.5;
+}
 
 /* ── Config panel ── */
 .flip-btn {

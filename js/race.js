@@ -11,7 +11,7 @@ function addBadge(horse, text) {
 }
 
 function pickDoomedHorse() {
-  if (Math.random() >= HEART_ATTACK.chance) return;
+  if (Math.random() >= getHeartAttackChance()) return;
 
   const { collapseMin, collapseMax } = HEART_ATTACK;
   const horse = state.horses[Math.floor(Math.random() * state.horses.length)];

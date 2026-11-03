@@ -5,6 +5,12 @@ function getConfig() {
   };
 }
 
+function getHeartAttackChance() {
+  const enabled = document.getElementById("heart-attack-enabled").checked;
+  const percent = parseInt(document.getElementById("heart-attack-chance").value);
+  return enabled ? percent / 100 : 0;
+}
+
 function toggleFlip(i) {
   state.flipState[i] = !state.flipState[i];
   const inner = document.getElementById(`inner-${i}`);
